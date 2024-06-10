@@ -30,4 +30,10 @@ describe('Funcionalidade: login', ()=>{
       cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, chesp.teste (não é chesp.teste? Sair)')
       })
     });
+
+    it('Deve fazer login com sucesso - usando Comando customizado ', () => {
+       cy.login('chesp.teste@teste.com', 'teste123@')
+       cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, chesp.teste (não é chesp.teste? Sair)')
+    
+    });
 })
